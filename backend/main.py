@@ -1,4 +1,5 @@
 import backend.managers
+import backend.workers
 import backend.ping
 from backend.db import database, engine, metadata
 from fastapi import FastAPI
@@ -20,3 +21,4 @@ async def shutdown():
 
 app.include_router(backend.ping.router)
 app.include_router(backend.managers.router, prefix="/managers", tags=["managers"])
+app.include_router(backend.workers.router, prefix="/workers", tags=["workers"])

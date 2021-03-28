@@ -20,6 +20,17 @@ managers = Table(
     Column("department", String(50)),
     Column("birthday", String(50)),
 )
+workers = Table(
+    "workers",
+    metadata,
+    Column("manager_id", Integer),
+    Column("id", Integer, primary_key=True),
+    Column("name", String(50)),
+    Column("surname", String(50)),
+    Column("job_name", String(50)),
+    Column("department", String(50)),
+    Column("birthday", String(50)),
+)
 
 # databases query builder
 database = Database(DATABASE_URL)

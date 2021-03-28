@@ -8,7 +8,7 @@ router = APIRouter()
 
 
 @router.post("/", response_model=ManagerDB, status_code=201)
-async def create_note(payload: Manager):
+async def create_manager(payload: Manager):
     manager_id = await backend.crud.post(payload)
 
     response_object = {
@@ -36,7 +36,7 @@ async def read_all_managers():
 
 
 @router.put("/{id}/", response_model=ManagerDB)
-async def update_note(payload: Manager, id: int = Path(..., gt=0),):
+async def update_manager(payload: Manager, id: int = Path(..., gt=0), ):
     manager = await backend.crud.get(id)
     if not manager:
         raise HTTPException(status_code=404, detail="Manager not found")
