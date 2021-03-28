@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 import asyncio
-import create_employee
+import ping
 
 app = FastAPI()
 

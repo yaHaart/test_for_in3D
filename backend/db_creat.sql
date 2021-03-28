@@ -8,7 +8,7 @@ birthday    varchar(80)
 );
 
 CREATE TABLE workers(
-boss_id int,
+manager_id int REFERENCES managers (id),
 id int primary key,
 name    varchar(80),
 surname     varchar(80),
